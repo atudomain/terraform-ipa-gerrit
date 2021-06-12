@@ -13,7 +13,7 @@ locals {
 }
 
 resource "docker_image" "ipa" {
-  name         = "freeipa/freeipa-server:fedora-rawhide"
+  name         = "freeipa/freeipa-server:centos-8"
   keep_locally = true
 }
 
@@ -33,7 +33,7 @@ resource "docker_container" "ipa" {
     "--unattended",
     "--ds-password=${var.ds_password}",
     "--admin-password=${var.admin_password}",
-    "--realem=${local.realm}",
+    "--realm=${local.realm}",
     "--no-ntp"
   ]
   volumes {
