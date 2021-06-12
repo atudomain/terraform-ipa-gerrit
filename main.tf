@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     docker = {
-      source = "kreuzwerker/docker"
+      source  = "kreuzwerker/docker"
       version = "~> 2.12.2"
     }
   }
@@ -15,11 +15,11 @@ resource "docker_network" "ipa-gerrit" {
 }
 
 module "ipa" {
-  source  = "./ipa"
-  network = "ipa-gerrit"
-  host = "ipa"
-  domain = "ci.local"
-  ds_password = var.ds_password
+  source         = "./ipa"
+  network        = "ipa-gerrit"
+  host           = "ipa"
+  domain         = "ci.local"
+  ds_password    = var.ds_password
   admin_password = var.admin_password
 }
 

@@ -1,7 +1,7 @@
 variable "ds_password" {
-  type = string 
+  type = string
 }
 
 variable "admin_password" {
-  type = string 
+  type = string
 }
