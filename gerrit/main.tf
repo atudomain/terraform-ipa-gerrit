@@ -84,6 +84,7 @@ resource "docker_container" "gerrit" {
     "GERRIT_CANONICAL_WEB_URL=${local.gerrit_canonicalWebUrl}",
     "LDAP_SERVER=${local.ldap_server}",
     "LDAP_USERNAME=${local.ldap_username}",
-    "LDAP_ACCOUNTBASE=${local.ldap_accountBase}"
+    "LDAP_ACCOUNTBASE=${local.ldap_accountBase}",
+    "LDAP_PASSWORD=${var.ldap_password}"
   ]
 }

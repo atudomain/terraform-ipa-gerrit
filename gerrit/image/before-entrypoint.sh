@@ -14,6 +14,7 @@ then
   if [ -f /secure.config ]; then
     echo "Initializing Gerrit secure config ..."
     cp -f /secure.config /var/gerrit/etc/secure.config
+    sed -i "s/<ldap_password>/$LDAP_PASSWORD/" /var/gerrit/etc/secure.config
   fi
 fi
 
