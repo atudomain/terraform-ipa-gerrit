@@ -29,7 +29,6 @@ resource "docker_image" "gerrit" {
       author : "atudomain"
     }
   }
-  keep_locally = true
 }
 
 resource "docker_volume" "gerrit_etc" {
