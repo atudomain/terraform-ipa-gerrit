@@ -9,7 +9,6 @@ then
     sed -i "s/<ldap_server>/$LDAP_SERVER/" /var/gerrit/etc/gerrit.config
     sed -i "s/<ldap_username>/$LDAP_USERNAME/" /var/gerrit/etc/gerrit.config
     sed -i "s/<ldap_accountBase>/$LDAP_ACCOUNTBASE/" /var/gerrit/etc/gerrit.config
-    cp -f /secure.config /var/gerrit/etc/secure.config
   fi
   if [ -f /secure.config ]; then
     echo "Initializing Gerrit secure config ..."
