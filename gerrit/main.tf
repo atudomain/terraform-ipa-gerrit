@@ -15,8 +15,8 @@ locals {
   volume_name_cache      = "${var.host}_cache"
   gerrit_canonicalWebUrl = "http://${var.host}.${var.domain}"
   ldap_server            = "ldap://${var.ldap_host}.${var.domain}"
-  ldap_username          = replace("cn=${var.ldap_cn}.${var.domain}", ".", ",dc=")
-  ldap_accountBase       = replace("dc=${var.domain}", ".", ",dc=")
+  ldap_username          = replace("uid=${var.ldap_uid},cn=users,cn=accounts,dc=${var.ldap_host},dc=${var.domain}", ".", ",dc=")
+  ldap_accountBase       = replace("cn=users,cn=accounts,dc=${var.ldap_host},dc=${var.domain}", ".", ",dc=")
 }
 
 resource "docker_image" "gerrit" {

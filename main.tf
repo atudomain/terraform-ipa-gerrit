@@ -33,6 +33,6 @@ module "gerrit" {
   host          = "gerrit"
   domain        = "ci.local"
   ldap_host     = "ipa"
-  ldap_cn       = "admin"
+  ldap_uid       = "admin"
   ldap_password = var.admin_password
 }

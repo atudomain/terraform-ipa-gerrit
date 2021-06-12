@@ -18,7 +18,7 @@ variable "ldap_host" {
   type = string
 }
 
-variable "ldap_cn" {
+variable "ldap_uid" {
   type = string
 }
 
