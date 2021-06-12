@@ -2,6 +2,10 @@ variable "network" {
   type = string
 }
 
+variable "dockerfile_path" {
+  type = string
+}
+
 variable "host" {
   type = string
 }

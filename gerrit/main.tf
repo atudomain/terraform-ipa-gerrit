@@ -20,10 +20,10 @@ locals {
 }
 
 resource "docker_image" "gerrit" {
-  name = "custom-gerrit"
+  name = "gerrit"
   build {
-    path = "./image"
-    tag  = ["latest"]
+    path = var.dockerfile_path"./gerrit/image"
+    tag  = ["custom-gerrit:latest"]
     label = {
       author : "atudomain"
     }

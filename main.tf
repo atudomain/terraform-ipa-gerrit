@@ -27,6 +27,8 @@ module "ipa" {
 module "gerrit" {
   source = "./gerrit"
 
+  dockerfile_path = "./gerrit/image"
+
   network       = "ipa-gerrit"
   host          = "gerrit"
   domain        = "ci.local"
