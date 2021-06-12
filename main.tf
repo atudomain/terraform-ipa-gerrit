@@ -15,7 +15,8 @@ resource "docker_network" "ipa_gerrit" {
 }
 
 module "ipa" {
-  source         = "./ipa"
+  source = "./ipa"
+
   network        = "ipa-gerrit"
   host           = "ipa"
   domain         = "ci.local"
@@ -23,6 +24,13 @@ module "ipa" {
   admin_password = var.admin_password
 }
 
-# module "gerrit" {
-#   source = "./gerrit"
-# }
+module "gerrit" {
+  source = "./gerrit"
+
+  network       = "ipa-gerrit"
+  host          = "gerrit"
+  domain        = "ci.local"
+  ldap_host     = "ipa"
+  ldap_cn       = "admin"
+  ldap_password = var.admin_password
+}
