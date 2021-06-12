@@ -10,7 +10,7 @@ terraform {
 
 provider "docker" {}
 
-resource "docker_network" "ipa-gerrit" {
+resource "docker_network" "ipa_gerrit" {
   name = "ipa-gerrit"
 }
 
