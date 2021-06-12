@@ -25,9 +25,9 @@ resource "docker_container" "ipa" {
   image    = docker_image.ipa.latest
   name     = var.host
   hostname = local.hostname
-  sysctls = [
-    "net.ipv6.conf.all.disable_ipv6=0"
-  ]
+  sysctls = {
+    "net.ipv6.conf.all.disable_ipv6" = 0
+  }
   restart = "unless-stopped"
   command = [
     "--unattended",
