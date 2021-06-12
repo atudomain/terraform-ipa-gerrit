@@ -10,6 +10,10 @@ variable "domain" {
   type = string
 }
 
+variable "ldap_host" {
+  type = string
+}
+
 variable "ldap_cn" {
   type = string
 }
